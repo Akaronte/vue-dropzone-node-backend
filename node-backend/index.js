@@ -4,7 +4,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const _ = require('lodash');
-const fs = require('fs')
 
 const app = express();
 
@@ -30,7 +29,6 @@ app.post('/uploadfile', async (req, res) => {
         } else {
 
             let file = req.files.file;
-            
 
             file.mv('./uploads/' + file.name);
 

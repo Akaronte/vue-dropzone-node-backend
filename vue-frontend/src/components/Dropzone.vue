@@ -31,6 +31,7 @@ export default {
     
     afterComplete(file) {
       console.log(file);
+      this.$refs.dropzone.removeFile(file)
     },
     removeAllFiles() {
         this.$refs.dropzone.removeAllFiles(true);
@@ -38,8 +39,6 @@ export default {
     sendFiles(){
         console.log('Sendfiles');
         this.$refs.dropzone.processQueue();
-        console.log('RemoveFiles');
-        this.removeAllFiles();
     }
   },
   components: {
