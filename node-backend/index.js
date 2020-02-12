@@ -6,6 +6,8 @@ const morgan = require('morgan');
 const _ = require('lodash');
 
 const app = express();
+const testFolder = './uploads/';
+const fs = require('fs');
 
 // enable files upload
 app.use(fileUpload({
@@ -17,6 +19,16 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+
+app.get('/files', async (req,res) => {
+    let files = [];
+    fs.readdirSync(testFolder).forEach(file => {
+        files.push(file);
+        console.log(file);
+    });
+    res.send(files);
+    
+});
 
 app.post('/uploadfile', async (req, res) => {
     //console.log(req.files)
