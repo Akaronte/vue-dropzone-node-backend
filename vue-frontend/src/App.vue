@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Dropzone/>
+    <Dropzone />
+    <DownloadFiles /> 
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+import DownloadFiles from './components/DownloadFiles.vue'
 import Dropzone from './components/Dropzone.vue'
 
 export default {
   name: 'App',
   components: {
-    //HelloWorld,
+    DownloadFiles,
     Dropzone
   }
 }
