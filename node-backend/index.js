@@ -27,7 +27,13 @@ app.get('/files', async (req,res) => {
         console.log(file);
     });
     res.send(files);
-    
+});
+
+app.get('/getfile', (req, res) => {
+    console.log(req.query.file);
+    let filePath = './uploads/' + req.query.file
+    res.download(filePath)
+
 });
 
 app.post('/uploadfile', async (req, res) => {
